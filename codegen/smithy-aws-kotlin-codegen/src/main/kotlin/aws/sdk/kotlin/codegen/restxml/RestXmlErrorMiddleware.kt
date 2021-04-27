@@ -27,9 +27,10 @@ class RestXmlErrorMiddleware(
             val code = errShape.id.name
             val symbol = ctx.symbolProvider.toSymbol(errShape)
             val deserializerName = "${symbol.name}Deserializer"
-            errShape.getTrait<HttpErrorTrait>()?.code?.let { httpStatusCode ->
-                writer.write("register(code = #S, deserializer = $deserializerName(), httpStatusCode = $httpStatusCode)", code)
-            }
+            // If model specifies error code use it or default to 400.
+            // See https://awslabs.github.io/smithy/1.0/spec/core/http-traits.html#httperror-trait
+            val httpStatusCode = errShape.getTrait<HttpErrorTrait>()?.code ?: 400
+            writer.write("register(code = #S, deserializer = $deserializerName(), httpStatusCode = $httpStatusCode)", code)
         }
     }
 }
