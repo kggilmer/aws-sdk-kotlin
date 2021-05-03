@@ -31,6 +31,7 @@ include(":client-runtime:protocols:http")
 include(":client-runtime:protocols:aws-json-protocols")
 include(":client-runtime:protocols:aws-xml-protocols")
 include(":client-runtime:crt-util")
+include(":client-runtime:customizations:s3")
 
 // generated services
 fun File.isServiceDir(): Boolean {
