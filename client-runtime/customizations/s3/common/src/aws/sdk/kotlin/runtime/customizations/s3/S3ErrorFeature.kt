@@ -132,7 +132,6 @@ private fun <T : Any> Attributes.setIfNotNull(key: AttributeKey<T>, value: T?) {
     if (value != null) set(key, value)
 }
 
-
 // Returns parsed data in normalized form or throws IllegalArgumentException if unparsable.
 internal suspend fun parseErrorResponse2(payload: ByteArray): RestXmlErrorDetails {
     // NOTE: we use an explicit XML deserializer here because we rely on validating the root element name

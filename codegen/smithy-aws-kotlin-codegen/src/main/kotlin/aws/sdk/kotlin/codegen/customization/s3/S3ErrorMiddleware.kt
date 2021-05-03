@@ -1,9 +1,7 @@
 package aws.sdk.kotlin.codegen.customization.s3
 
 import aws.sdk.kotlin.codegen.AWS_CLIENT_RT_GROUP
-import aws.sdk.kotlin.codegen.AWS_CLIENT_RT_ROOT_NS
 import aws.sdk.kotlin.codegen.AWS_CLIENT_RT_VERSION
-import aws.sdk.kotlin.codegen.AwsKotlinDependency
 import aws.sdk.kotlin.codegen.protocols.middleware.ModeledExceptionsMiddleware
 import software.amazon.smithy.kotlin.codegen.core.GradleConfiguration
 import software.amazon.smithy.kotlin.codegen.core.KotlinDependency
@@ -13,7 +11,6 @@ import software.amazon.smithy.kotlin.codegen.model.getTrait
 import software.amazon.smithy.kotlin.codegen.rendering.protocol.HttpBindingResolver
 import software.amazon.smithy.kotlin.codegen.rendering.protocol.ProtocolGenerator
 import software.amazon.smithy.model.traits.HttpErrorTrait
-
 
 class S3ErrorMiddleware(
     ctx: ProtocolGenerator.GenerationContext,
