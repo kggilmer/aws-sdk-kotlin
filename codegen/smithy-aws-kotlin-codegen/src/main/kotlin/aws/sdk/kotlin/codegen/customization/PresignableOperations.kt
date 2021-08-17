@@ -20,7 +20,10 @@ internal val DEFAULT_PRESIGNABLE_OPERATIONS: Map<String, Set<String>> = mapOf(
     ),
     "com.amazonaws.polly#Parrot_v1" to setOf(
         "com.amazonaws.polly#SynthesizeSpeech"
-    )
+    ),
+    "com.amazonaws.ec2#AmazonEC2" to setOf(
+        "com.amazonaws.ec2#CopySnapshot"
+    ),
 )
 
 /**

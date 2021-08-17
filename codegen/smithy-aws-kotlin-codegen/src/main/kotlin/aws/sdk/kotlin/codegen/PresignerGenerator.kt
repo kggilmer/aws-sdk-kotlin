@@ -6,6 +6,7 @@ import aws.sdk.kotlin.codegen.protocols.core.QueryBindingResolver
 import aws.sdk.kotlin.codegen.protocols.middleware.AwsSignatureVersion4
 import software.amazon.smithy.aws.traits.auth.SigV4Trait
 import software.amazon.smithy.aws.traits.protocols.AwsQueryTrait
+import software.amazon.smithy.aws.traits.protocols.Ec2QueryTrait
 import software.amazon.smithy.aws.traits.protocols.RestJson1Trait
 import software.amazon.smithy.aws.traits.protocols.RestXmlTrait
 import software.amazon.smithy.codegen.core.CodegenException
@@ -270,7 +271,8 @@ class PresignerGenerator : KotlinIntegration {
                     }
                 }
             }
-            AwsQueryTrait.ID -> {
+            AwsQueryTrait.ID,
+            Ec2QueryTrait.ID -> {
                 object : PresignConfigFnVisitor {
                     override fun renderHttpMethod(writer: KotlinWriter) {
                         writer.addImport(RuntimeTypes.Http.HttpMethod)
@@ -355,7 +357,8 @@ class PresignerGenerator : KotlinIntegration {
 
     private fun getProtocolHttpBindingResolver(ctx: CodegenContext, service: ServiceShape): HttpBindingResolver =
         when (requireNotNull(ctx.protocolGenerator).protocol) {
-            AwsQueryTrait.ID -> QueryBindingResolver(ctx.model, service)
+            AwsQueryTrait.ID,
+            Ec2QueryTrait.ID -> QueryBindingResolver(ctx.model, service)
             RestJson1Trait.ID -> HttpTraitResolver(ctx.model, service, "application/json")
             RestXmlTrait.ID -> HttpTraitResolver(ctx.model, service, "application/xml")
             else -> throw CodegenException("Unable to create HttpBindingResolver for unhandled protocol ${ctx.protocolGenerator?.protocol}")
