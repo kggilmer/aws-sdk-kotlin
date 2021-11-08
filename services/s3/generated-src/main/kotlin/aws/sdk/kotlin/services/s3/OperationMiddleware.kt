@@ -11,7 +11,7 @@ import aws.sdk.kotlin.runtime.http.middleware.UserAgent
 import aws.sdk.kotlin.runtime.http.retries.AwsDefaultRetryPolicy
 import aws.sdk.kotlin.services.s3.model.*
 import aws.smithy.kotlin.runtime.http.middleware.Md5Checksum
-import aws.smithy.kotlin.runtime.http.middleware.RetryFeature
+import aws.smithy.kotlin.runtime.http.middleware.Retry
 import aws.smithy.kotlin.runtime.http.operation.SdkHttpOperation
 
 private val awsUserAgentMetadata = AwsUserAgentMetadata.fromEnvironment(ApiMetadata(ServiceId, SdkVersion))
@@ -22,7 +22,7 @@ internal fun registerAbortMultipartUploadMiddleware(config: S3Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -45,7 +45,7 @@ internal fun registerCompleteMultipartUploadMiddleware(config: S3Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -68,7 +68,7 @@ internal fun registerCopyObjectMiddleware(config: S3Client.Config, op: SdkHttpOp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -91,7 +91,7 @@ internal fun registerCreateBucketMiddleware(config: S3Client.Config, op: SdkHttp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -114,7 +114,7 @@ internal fun registerCreateMultipartUploadMiddleware(config: S3Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -137,7 +137,7 @@ internal fun registerDeleteBucketMiddleware(config: S3Client.Config, op: SdkHttp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -160,7 +160,7 @@ internal fun registerDeleteBucketAnalyticsConfigurationMiddleware(config: S3Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -183,7 +183,7 @@ internal fun registerDeleteBucketCorsMiddleware(config: S3Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -206,7 +206,7 @@ internal fun registerDeleteBucketEncryptionMiddleware(config: S3Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -229,7 +229,7 @@ internal fun registerDeleteBucketIntelligentTieringConfigurationMiddleware(confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -252,7 +252,7 @@ internal fun registerDeleteBucketInventoryConfigurationMiddleware(config: S3Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -275,7 +275,7 @@ internal fun registerDeleteBucketLifecycleMiddleware(config: S3Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -298,7 +298,7 @@ internal fun registerDeleteBucketMetricsConfigurationMiddleware(config: S3Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -321,7 +321,7 @@ internal fun registerDeleteBucketOwnershipControlsMiddleware(config: S3Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -344,7 +344,7 @@ internal fun registerDeleteBucketPolicyMiddleware(config: S3Client.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -367,7 +367,7 @@ internal fun registerDeleteBucketReplicationMiddleware(config: S3Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -390,7 +390,7 @@ internal fun registerDeleteBucketTaggingMiddleware(config: S3Client.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -413,7 +413,7 @@ internal fun registerDeleteBucketWebsiteMiddleware(config: S3Client.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -436,7 +436,7 @@ internal fun registerDeleteObjectMiddleware(config: S3Client.Config, op: SdkHttp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -459,7 +459,7 @@ internal fun registerDeleteObjectTaggingMiddleware(config: S3Client.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -482,7 +482,7 @@ internal fun registerDeleteObjectsMiddleware(config: S3Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -506,7 +506,7 @@ internal fun registerDeletePublicAccessBlockMiddleware(config: S3Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -529,7 +529,7 @@ internal fun registerGetBucketAccelerateConfigurationMiddleware(config: S3Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -552,7 +552,7 @@ internal fun registerGetBucketAclMiddleware(config: S3Client.Config, op: SdkHttp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -575,7 +575,7 @@ internal fun registerGetBucketAnalyticsConfigurationMiddleware(config: S3Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -598,7 +598,7 @@ internal fun registerGetBucketCorsMiddleware(config: S3Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -621,7 +621,7 @@ internal fun registerGetBucketEncryptionMiddleware(config: S3Client.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -644,7 +644,7 @@ internal fun registerGetBucketIntelligentTieringConfigurationMiddleware(config: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -667,7 +667,7 @@ internal fun registerGetBucketInventoryConfigurationMiddleware(config: S3Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -690,7 +690,7 @@ internal fun registerGetBucketLifecycleConfigurationMiddleware(config: S3Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -713,7 +713,7 @@ internal fun registerGetBucketLocationMiddleware(config: S3Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -736,7 +736,7 @@ internal fun registerGetBucketLoggingMiddleware(config: S3Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -759,7 +759,7 @@ internal fun registerGetBucketMetricsConfigurationMiddleware(config: S3Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -782,7 +782,7 @@ internal fun registerGetBucketNotificationConfigurationMiddleware(config: S3Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -805,7 +805,7 @@ internal fun registerGetBucketOwnershipControlsMiddleware(config: S3Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -828,7 +828,7 @@ internal fun registerGetBucketPolicyMiddleware(config: S3Client.Config, op: SdkH
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -851,7 +851,7 @@ internal fun registerGetBucketPolicyStatusMiddleware(config: S3Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -874,7 +874,7 @@ internal fun registerGetBucketReplicationMiddleware(config: S3Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -897,7 +897,7 @@ internal fun registerGetBucketRequestPaymentMiddleware(config: S3Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -920,7 +920,7 @@ internal fun registerGetBucketTaggingMiddleware(config: S3Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -943,7 +943,7 @@ internal fun registerGetBucketVersioningMiddleware(config: S3Client.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -966,7 +966,7 @@ internal fun registerGetBucketWebsiteMiddleware(config: S3Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -989,7 +989,7 @@ internal fun registerGetObjectMiddleware(config: S3Client.Config, op: SdkHttpOpe
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1012,7 +1012,7 @@ internal fun registerGetObjectAclMiddleware(config: S3Client.Config, op: SdkHttp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1035,7 +1035,7 @@ internal fun registerGetObjectLegalHoldMiddleware(config: S3Client.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1058,7 +1058,7 @@ internal fun registerGetObjectLockConfigurationMiddleware(config: S3Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1081,7 +1081,7 @@ internal fun registerGetObjectRetentionMiddleware(config: S3Client.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1104,7 +1104,7 @@ internal fun registerGetObjectTaggingMiddleware(config: S3Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1127,7 +1127,7 @@ internal fun registerGetObjectTorrentMiddleware(config: S3Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1150,7 +1150,7 @@ internal fun registerGetPublicAccessBlockMiddleware(config: S3Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1173,7 +1173,7 @@ internal fun registerHeadBucketMiddleware(config: S3Client.Config, op: SdkHttpOp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1196,7 +1196,7 @@ internal fun registerHeadObjectMiddleware(config: S3Client.Config, op: SdkHttpOp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1219,7 +1219,7 @@ internal fun registerListBucketAnalyticsConfigurationsMiddleware(config: S3Clien
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1242,7 +1242,7 @@ internal fun registerListBucketIntelligentTieringConfigurationsMiddleware(config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1265,7 +1265,7 @@ internal fun registerListBucketInventoryConfigurationsMiddleware(config: S3Clien
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1288,7 +1288,7 @@ internal fun registerListBucketMetricsConfigurationsMiddleware(config: S3Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1311,7 +1311,7 @@ internal fun registerListBucketsMiddleware(config: S3Client.Config, op: SdkHttpO
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1334,7 +1334,7 @@ internal fun registerListMultipartUploadsMiddleware(config: S3Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1357,7 +1357,7 @@ internal fun registerListObjectVersionsMiddleware(config: S3Client.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1380,7 +1380,7 @@ internal fun registerListObjectsMiddleware(config: S3Client.Config, op: SdkHttpO
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1403,7 +1403,7 @@ internal fun registerListObjectsV2Middleware(config: S3Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1426,7 +1426,7 @@ internal fun registerListPartsMiddleware(config: S3Client.Config, op: SdkHttpOpe
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1449,7 +1449,7 @@ internal fun registerPutBucketAccelerateConfigurationMiddleware(config: S3Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1472,7 +1472,7 @@ internal fun registerPutBucketAclMiddleware(config: S3Client.Config, op: SdkHttp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1496,7 +1496,7 @@ internal fun registerPutBucketAnalyticsConfigurationMiddleware(config: S3Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1519,7 +1519,7 @@ internal fun registerPutBucketCorsMiddleware(config: S3Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1543,7 +1543,7 @@ internal fun registerPutBucketEncryptionMiddleware(config: S3Client.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1567,7 +1567,7 @@ internal fun registerPutBucketIntelligentTieringConfigurationMiddleware(config: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1590,7 +1590,7 @@ internal fun registerPutBucketInventoryConfigurationMiddleware(config: S3Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1613,7 +1613,7 @@ internal fun registerPutBucketLifecycleConfigurationMiddleware(config: S3Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1637,7 +1637,7 @@ internal fun registerPutBucketLoggingMiddleware(config: S3Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1661,7 +1661,7 @@ internal fun registerPutBucketMetricsConfigurationMiddleware(config: S3Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1684,7 +1684,7 @@ internal fun registerPutBucketNotificationConfigurationMiddleware(config: S3Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1707,7 +1707,7 @@ internal fun registerPutBucketOwnershipControlsMiddleware(config: S3Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1731,7 +1731,7 @@ internal fun registerPutBucketPolicyMiddleware(config: S3Client.Config, op: SdkH
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1755,7 +1755,7 @@ internal fun registerPutBucketReplicationMiddleware(config: S3Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1779,7 +1779,7 @@ internal fun registerPutBucketRequestPaymentMiddleware(config: S3Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1803,7 +1803,7 @@ internal fun registerPutBucketTaggingMiddleware(config: S3Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1827,7 +1827,7 @@ internal fun registerPutBucketVersioningMiddleware(config: S3Client.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1851,7 +1851,7 @@ internal fun registerPutBucketWebsiteMiddleware(config: S3Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1875,7 +1875,7 @@ internal fun registerPutObjectMiddleware(config: S3Client.Config, op: SdkHttpOpe
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1898,7 +1898,7 @@ internal fun registerPutObjectAclMiddleware(config: S3Client.Config, op: SdkHttp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1922,7 +1922,7 @@ internal fun registerPutObjectLegalHoldMiddleware(config: S3Client.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1946,7 +1946,7 @@ internal fun registerPutObjectLockConfigurationMiddleware(config: S3Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1970,7 +1970,7 @@ internal fun registerPutObjectRetentionMiddleware(config: S3Client.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1994,7 +1994,7 @@ internal fun registerPutObjectTaggingMiddleware(config: S3Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2018,7 +2018,7 @@ internal fun registerPutPublicAccessBlockMiddleware(config: S3Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2042,7 +2042,7 @@ internal fun registerRestoreObjectMiddleware(config: S3Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2065,7 +2065,7 @@ internal fun registerSelectObjectContentMiddleware(config: S3Client.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2088,7 +2088,7 @@ internal fun registerUploadPartMiddleware(config: S3Client.Config, op: SdkHttpOp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2111,7 +2111,7 @@ internal fun registerUploadPartCopyMiddleware(config: S3Client.Config, op: SdkHt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2134,7 +2134,7 @@ internal fun registerWriteGetObjectResponseMiddleware(config: S3Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }

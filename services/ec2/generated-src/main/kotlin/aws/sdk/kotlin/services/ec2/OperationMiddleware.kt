@@ -10,7 +10,7 @@ import aws.sdk.kotlin.runtime.http.middleware.UserAgent
 import aws.sdk.kotlin.runtime.http.retries.AwsDefaultRetryPolicy
 import aws.sdk.kotlin.services.ec2.model.*
 import aws.smithy.kotlin.runtime.http.middleware.MutateHeaders
-import aws.smithy.kotlin.runtime.http.middleware.RetryFeature
+import aws.smithy.kotlin.runtime.http.middleware.Retry
 import aws.smithy.kotlin.runtime.http.operation.SdkHttpOperation
 
 private val awsUserAgentMetadata = AwsUserAgentMetadata.fromEnvironment(ApiMetadata(ServiceId, SdkVersion))
@@ -21,7 +21,7 @@ internal fun registerAcceptReservedInstancesExchangeQuoteMiddleware(config: Ec2C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -44,7 +44,7 @@ internal fun registerAcceptTransitGatewayMulticastDomainAssociationsMiddleware(c
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -67,7 +67,7 @@ internal fun registerAcceptTransitGatewayPeeringAttachmentMiddleware(config: Ec2
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -90,7 +90,7 @@ internal fun registerAcceptTransitGatewayVpcAttachmentMiddleware(config: Ec2Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -113,7 +113,7 @@ internal fun registerAcceptVpcEndpointConnectionsMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -136,7 +136,7 @@ internal fun registerAcceptVpcPeeringConnectionMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -159,7 +159,7 @@ internal fun registerAdvertiseByoipCidrMiddleware(config: Ec2Client.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -182,7 +182,7 @@ internal fun registerAllocateAddressMiddleware(config: Ec2Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -205,7 +205,7 @@ internal fun registerAllocateHostsMiddleware(config: Ec2Client.Config, op: SdkHt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -228,7 +228,7 @@ internal fun registerApplySecurityGroupsToClientVpnTargetNetworkMiddleware(confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -251,7 +251,7 @@ internal fun registerAssignIpv6AddressesMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -274,7 +274,7 @@ internal fun registerAssignPrivateIpAddressesMiddleware(config: Ec2Client.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -297,7 +297,7 @@ internal fun registerAssociateAddressMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -320,7 +320,7 @@ internal fun registerAssociateClientVpnTargetNetworkMiddleware(config: Ec2Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -343,7 +343,7 @@ internal fun registerAssociateDhcpOptionsMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -366,7 +366,7 @@ internal fun registerAssociateEnclaveCertificateIamRoleMiddleware(config: Ec2Cli
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -389,7 +389,7 @@ internal fun registerAssociateIamInstanceProfileMiddleware(config: Ec2Client.Con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -412,7 +412,7 @@ internal fun registerAssociateInstanceEventWindowMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -435,7 +435,7 @@ internal fun registerAssociateRouteTableMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -458,7 +458,7 @@ internal fun registerAssociateSubnetCidrBlockMiddleware(config: Ec2Client.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -481,7 +481,7 @@ internal fun registerAssociateTransitGatewayMulticastDomainMiddleware(config: Ec
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -504,7 +504,7 @@ internal fun registerAssociateTransitGatewayRouteTableMiddleware(config: Ec2Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -527,7 +527,7 @@ internal fun registerAssociateTrunkInterfaceMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -550,7 +550,7 @@ internal fun registerAssociateVpcCidrBlockMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -573,7 +573,7 @@ internal fun registerAttachClassicLinkVpcMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -596,7 +596,7 @@ internal fun registerAttachInternetGatewayMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -619,7 +619,7 @@ internal fun registerAttachNetworkInterfaceMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -642,7 +642,7 @@ internal fun registerAttachVolumeMiddleware(config: Ec2Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -665,7 +665,7 @@ internal fun registerAttachVpnGatewayMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -688,7 +688,7 @@ internal fun registerAuthorizeClientVpnIngressMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -711,7 +711,7 @@ internal fun registerAuthorizeSecurityGroupEgressMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -734,7 +734,7 @@ internal fun registerAuthorizeSecurityGroupIngressMiddleware(config: Ec2Client.C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -757,7 +757,7 @@ internal fun registerBundleInstanceMiddleware(config: Ec2Client.Config, op: SdkH
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -780,7 +780,7 @@ internal fun registerCancelBundleTaskMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -803,7 +803,7 @@ internal fun registerCancelCapacityReservationMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -826,7 +826,7 @@ internal fun registerCancelCapacityReservationFleetsMiddleware(config: Ec2Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -849,7 +849,7 @@ internal fun registerCancelConversionTaskMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -872,7 +872,7 @@ internal fun registerCancelExportTaskMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -895,7 +895,7 @@ internal fun registerCancelImportTaskMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -918,7 +918,7 @@ internal fun registerCancelReservedInstancesListingMiddleware(config: Ec2Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -941,7 +941,7 @@ internal fun registerCancelSpotFleetRequestsMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -964,7 +964,7 @@ internal fun registerCancelSpotInstanceRequestsMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -987,7 +987,7 @@ internal fun registerConfirmProductInstanceMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1010,7 +1010,7 @@ internal fun registerCopyFpgaImageMiddleware(config: Ec2Client.Config, op: SdkHt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1033,7 +1033,7 @@ internal fun registerCopyImageMiddleware(config: Ec2Client.Config, op: SdkHttpOp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1056,7 +1056,7 @@ internal fun registerCopySnapshotMiddleware(config: Ec2Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1079,7 +1079,7 @@ internal fun registerCreateCapacityReservationMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1102,7 +1102,7 @@ internal fun registerCreateCapacityReservationFleetMiddleware(config: Ec2Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1125,7 +1125,7 @@ internal fun registerCreateCarrierGatewayMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1148,7 +1148,7 @@ internal fun registerCreateClientVpnEndpointMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1171,7 +1171,7 @@ internal fun registerCreateClientVpnRouteMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1194,7 +1194,7 @@ internal fun registerCreateCustomerGatewayMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1217,7 +1217,7 @@ internal fun registerCreateDefaultSubnetMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1240,7 +1240,7 @@ internal fun registerCreateDefaultVpcMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1263,7 +1263,7 @@ internal fun registerCreateDhcpOptionsMiddleware(config: Ec2Client.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1286,7 +1286,7 @@ internal fun registerCreateEgressOnlyInternetGatewayMiddleware(config: Ec2Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1309,7 +1309,7 @@ internal fun registerCreateFleetMiddleware(config: Ec2Client.Config, op: SdkHttp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1332,7 +1332,7 @@ internal fun registerCreateFlowLogsMiddleware(config: Ec2Client.Config, op: SdkH
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1355,7 +1355,7 @@ internal fun registerCreateFpgaImageMiddleware(config: Ec2Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1378,7 +1378,7 @@ internal fun registerCreateImageMiddleware(config: Ec2Client.Config, op: SdkHttp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1401,7 +1401,7 @@ internal fun registerCreateInstanceEventWindowMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1424,7 +1424,7 @@ internal fun registerCreateInstanceExportTaskMiddleware(config: Ec2Client.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1447,7 +1447,7 @@ internal fun registerCreateInternetGatewayMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1470,7 +1470,7 @@ internal fun registerCreateKeyPairMiddleware(config: Ec2Client.Config, op: SdkHt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1493,7 +1493,7 @@ internal fun registerCreateLaunchTemplateMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1516,7 +1516,7 @@ internal fun registerCreateLaunchTemplateVersionMiddleware(config: Ec2Client.Con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1539,7 +1539,7 @@ internal fun registerCreateLocalGatewayRouteMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1562,7 +1562,7 @@ internal fun registerCreateLocalGatewayRouteTableVpcAssociationMiddleware(config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1585,7 +1585,7 @@ internal fun registerCreateManagedPrefixListMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1608,7 +1608,7 @@ internal fun registerCreateNatGatewayMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1631,7 +1631,7 @@ internal fun registerCreateNetworkAclMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1654,7 +1654,7 @@ internal fun registerCreateNetworkAclEntryMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1677,7 +1677,7 @@ internal fun registerCreateNetworkInsightsPathMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1700,7 +1700,7 @@ internal fun registerCreateNetworkInterfaceMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1723,7 +1723,7 @@ internal fun registerCreateNetworkInterfacePermissionMiddleware(config: Ec2Clien
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1746,7 +1746,7 @@ internal fun registerCreatePlacementGroupMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1769,7 +1769,7 @@ internal fun registerCreateReplaceRootVolumeTaskMiddleware(config: Ec2Client.Con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1792,7 +1792,7 @@ internal fun registerCreateReservedInstancesListingMiddleware(config: Ec2Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1815,7 +1815,7 @@ internal fun registerCreateRestoreImageTaskMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1838,7 +1838,7 @@ internal fun registerCreateRouteMiddleware(config: Ec2Client.Config, op: SdkHttp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1861,7 +1861,7 @@ internal fun registerCreateRouteTableMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1884,7 +1884,7 @@ internal fun registerCreateSecurityGroupMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1907,7 +1907,7 @@ internal fun registerCreateSnapshotMiddleware(config: Ec2Client.Config, op: SdkH
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1930,7 +1930,7 @@ internal fun registerCreateSnapshotsMiddleware(config: Ec2Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1953,7 +1953,7 @@ internal fun registerCreateSpotDatafeedSubscriptionMiddleware(config: Ec2Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1976,7 +1976,7 @@ internal fun registerCreateStoreImageTaskMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1999,7 +1999,7 @@ internal fun registerCreateSubnetMiddleware(config: Ec2Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2022,7 +2022,7 @@ internal fun registerCreateSubnetCidrReservationMiddleware(config: Ec2Client.Con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2045,7 +2045,7 @@ internal fun registerCreateTagsMiddleware(config: Ec2Client.Config, op: SdkHttpO
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2068,7 +2068,7 @@ internal fun registerCreateTrafficMirrorFilterMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2091,7 +2091,7 @@ internal fun registerCreateTrafficMirrorFilterRuleMiddleware(config: Ec2Client.C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2114,7 +2114,7 @@ internal fun registerCreateTrafficMirrorSessionMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2137,7 +2137,7 @@ internal fun registerCreateTrafficMirrorTargetMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2160,7 +2160,7 @@ internal fun registerCreateTransitGatewayMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2183,7 +2183,7 @@ internal fun registerCreateTransitGatewayConnectMiddleware(config: Ec2Client.Con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2206,7 +2206,7 @@ internal fun registerCreateTransitGatewayConnectPeerMiddleware(config: Ec2Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2229,7 +2229,7 @@ internal fun registerCreateTransitGatewayMulticastDomainMiddleware(config: Ec2Cl
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2252,7 +2252,7 @@ internal fun registerCreateTransitGatewayPeeringAttachmentMiddleware(config: Ec2
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2275,7 +2275,7 @@ internal fun registerCreateTransitGatewayPrefixListReferenceMiddleware(config: E
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2298,7 +2298,7 @@ internal fun registerCreateTransitGatewayRouteMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2321,7 +2321,7 @@ internal fun registerCreateTransitGatewayRouteTableMiddleware(config: Ec2Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2344,7 +2344,7 @@ internal fun registerCreateTransitGatewayVpcAttachmentMiddleware(config: Ec2Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2367,7 +2367,7 @@ internal fun registerCreateVolumeMiddleware(config: Ec2Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2390,7 +2390,7 @@ internal fun registerCreateVpcMiddleware(config: Ec2Client.Config, op: SdkHttpOp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2413,7 +2413,7 @@ internal fun registerCreateVpcEndpointMiddleware(config: Ec2Client.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2436,7 +2436,7 @@ internal fun registerCreateVpcEndpointConnectionNotificationMiddleware(config: E
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2459,7 +2459,7 @@ internal fun registerCreateVpcEndpointServiceConfigurationMiddleware(config: Ec2
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2482,7 +2482,7 @@ internal fun registerCreateVpcPeeringConnectionMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2505,7 +2505,7 @@ internal fun registerCreateVpnConnectionMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2528,7 +2528,7 @@ internal fun registerCreateVpnConnectionRouteMiddleware(config: Ec2Client.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2551,7 +2551,7 @@ internal fun registerCreateVpnGatewayMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2574,7 +2574,7 @@ internal fun registerDeleteCarrierGatewayMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2597,7 +2597,7 @@ internal fun registerDeleteClientVpnEndpointMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2620,7 +2620,7 @@ internal fun registerDeleteClientVpnRouteMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2643,7 +2643,7 @@ internal fun registerDeleteCustomerGatewayMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2666,7 +2666,7 @@ internal fun registerDeleteDhcpOptionsMiddleware(config: Ec2Client.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2689,7 +2689,7 @@ internal fun registerDeleteEgressOnlyInternetGatewayMiddleware(config: Ec2Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2712,7 +2712,7 @@ internal fun registerDeleteFleetsMiddleware(config: Ec2Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2735,7 +2735,7 @@ internal fun registerDeleteFlowLogsMiddleware(config: Ec2Client.Config, op: SdkH
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2758,7 +2758,7 @@ internal fun registerDeleteFpgaImageMiddleware(config: Ec2Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2781,7 +2781,7 @@ internal fun registerDeleteInstanceEventWindowMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2804,7 +2804,7 @@ internal fun registerDeleteInternetGatewayMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2827,7 +2827,7 @@ internal fun registerDeleteKeyPairMiddleware(config: Ec2Client.Config, op: SdkHt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2850,7 +2850,7 @@ internal fun registerDeleteLaunchTemplateMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2873,7 +2873,7 @@ internal fun registerDeleteLaunchTemplateVersionsMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2896,7 +2896,7 @@ internal fun registerDeleteLocalGatewayRouteMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2919,7 +2919,7 @@ internal fun registerDeleteLocalGatewayRouteTableVpcAssociationMiddleware(config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2942,7 +2942,7 @@ internal fun registerDeleteManagedPrefixListMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2965,7 +2965,7 @@ internal fun registerDeleteNatGatewayMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -2988,7 +2988,7 @@ internal fun registerDeleteNetworkAclMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3011,7 +3011,7 @@ internal fun registerDeleteNetworkAclEntryMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3034,7 +3034,7 @@ internal fun registerDeleteNetworkInsightsAnalysisMiddleware(config: Ec2Client.C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3057,7 +3057,7 @@ internal fun registerDeleteNetworkInsightsPathMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3080,7 +3080,7 @@ internal fun registerDeleteNetworkInterfaceMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3103,7 +3103,7 @@ internal fun registerDeleteNetworkInterfacePermissionMiddleware(config: Ec2Clien
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3126,7 +3126,7 @@ internal fun registerDeletePlacementGroupMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3149,7 +3149,7 @@ internal fun registerDeleteQueuedReservedInstancesMiddleware(config: Ec2Client.C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3172,7 +3172,7 @@ internal fun registerDeleteRouteMiddleware(config: Ec2Client.Config, op: SdkHttp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3195,7 +3195,7 @@ internal fun registerDeleteRouteTableMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3218,7 +3218,7 @@ internal fun registerDeleteSecurityGroupMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3241,7 +3241,7 @@ internal fun registerDeleteSnapshotMiddleware(config: Ec2Client.Config, op: SdkH
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3264,7 +3264,7 @@ internal fun registerDeleteSpotDatafeedSubscriptionMiddleware(config: Ec2Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3287,7 +3287,7 @@ internal fun registerDeleteSubnetMiddleware(config: Ec2Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3310,7 +3310,7 @@ internal fun registerDeleteSubnetCidrReservationMiddleware(config: Ec2Client.Con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3333,7 +3333,7 @@ internal fun registerDeleteTagsMiddleware(config: Ec2Client.Config, op: SdkHttpO
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3356,7 +3356,7 @@ internal fun registerDeleteTrafficMirrorFilterMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3379,7 +3379,7 @@ internal fun registerDeleteTrafficMirrorFilterRuleMiddleware(config: Ec2Client.C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3402,7 +3402,7 @@ internal fun registerDeleteTrafficMirrorSessionMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3425,7 +3425,7 @@ internal fun registerDeleteTrafficMirrorTargetMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3448,7 +3448,7 @@ internal fun registerDeleteTransitGatewayMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3471,7 +3471,7 @@ internal fun registerDeleteTransitGatewayConnectMiddleware(config: Ec2Client.Con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3494,7 +3494,7 @@ internal fun registerDeleteTransitGatewayConnectPeerMiddleware(config: Ec2Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3517,7 +3517,7 @@ internal fun registerDeleteTransitGatewayMulticastDomainMiddleware(config: Ec2Cl
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3540,7 +3540,7 @@ internal fun registerDeleteTransitGatewayPeeringAttachmentMiddleware(config: Ec2
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3563,7 +3563,7 @@ internal fun registerDeleteTransitGatewayPrefixListReferenceMiddleware(config: E
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3586,7 +3586,7 @@ internal fun registerDeleteTransitGatewayRouteMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3609,7 +3609,7 @@ internal fun registerDeleteTransitGatewayRouteTableMiddleware(config: Ec2Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3632,7 +3632,7 @@ internal fun registerDeleteTransitGatewayVpcAttachmentMiddleware(config: Ec2Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3655,7 +3655,7 @@ internal fun registerDeleteVolumeMiddleware(config: Ec2Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3678,7 +3678,7 @@ internal fun registerDeleteVpcMiddleware(config: Ec2Client.Config, op: SdkHttpOp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3701,7 +3701,7 @@ internal fun registerDeleteVpcEndpointConnectionNotificationsMiddleware(config: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3724,7 +3724,7 @@ internal fun registerDeleteVpcEndpointServiceConfigurationsMiddleware(config: Ec
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3747,7 +3747,7 @@ internal fun registerDeleteVpcEndpointsMiddleware(config: Ec2Client.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3770,7 +3770,7 @@ internal fun registerDeleteVpcPeeringConnectionMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3793,7 +3793,7 @@ internal fun registerDeleteVpnConnectionMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3816,7 +3816,7 @@ internal fun registerDeleteVpnConnectionRouteMiddleware(config: Ec2Client.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3839,7 +3839,7 @@ internal fun registerDeleteVpnGatewayMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3862,7 +3862,7 @@ internal fun registerDeprovisionByoipCidrMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3885,7 +3885,7 @@ internal fun registerDeregisterImageMiddleware(config: Ec2Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3908,7 +3908,7 @@ internal fun registerDeregisterInstanceEventNotificationAttributesMiddleware(con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3931,7 +3931,7 @@ internal fun registerDeregisterTransitGatewayMulticastGroupMembersMiddleware(con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3954,7 +3954,7 @@ internal fun registerDeregisterTransitGatewayMulticastGroupSourcesMiddleware(con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -3977,7 +3977,7 @@ internal fun registerDescribeAccountAttributesMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4000,7 +4000,7 @@ internal fun registerDescribeAddressesMiddleware(config: Ec2Client.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4023,7 +4023,7 @@ internal fun registerDescribeAddressesAttributeMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4046,7 +4046,7 @@ internal fun registerDescribeAggregateIdFormatMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4069,7 +4069,7 @@ internal fun registerDescribeAvailabilityZonesMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4092,7 +4092,7 @@ internal fun registerDescribeBundleTasksMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4115,7 +4115,7 @@ internal fun registerDescribeByoipCidrsMiddleware(config: Ec2Client.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4138,7 +4138,7 @@ internal fun registerDescribeCapacityReservationFleetsMiddleware(config: Ec2Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4161,7 +4161,7 @@ internal fun registerDescribeCapacityReservationsMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4184,7 +4184,7 @@ internal fun registerDescribeCarrierGatewaysMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4207,7 +4207,7 @@ internal fun registerDescribeClassicLinkInstancesMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4230,7 +4230,7 @@ internal fun registerDescribeClientVpnAuthorizationRulesMiddleware(config: Ec2Cl
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4253,7 +4253,7 @@ internal fun registerDescribeClientVpnConnectionsMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4276,7 +4276,7 @@ internal fun registerDescribeClientVpnEndpointsMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4299,7 +4299,7 @@ internal fun registerDescribeClientVpnRoutesMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4322,7 +4322,7 @@ internal fun registerDescribeClientVpnTargetNetworksMiddleware(config: Ec2Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4345,7 +4345,7 @@ internal fun registerDescribeCoipPoolsMiddleware(config: Ec2Client.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4368,7 +4368,7 @@ internal fun registerDescribeConversionTasksMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4391,7 +4391,7 @@ internal fun registerDescribeCustomerGatewaysMiddleware(config: Ec2Client.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4414,7 +4414,7 @@ internal fun registerDescribeDhcpOptionsMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4437,7 +4437,7 @@ internal fun registerDescribeEgressOnlyInternetGatewaysMiddleware(config: Ec2Cli
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4460,7 +4460,7 @@ internal fun registerDescribeElasticGpusMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4483,7 +4483,7 @@ internal fun registerDescribeExportImageTasksMiddleware(config: Ec2Client.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4506,7 +4506,7 @@ internal fun registerDescribeExportTasksMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4529,7 +4529,7 @@ internal fun registerDescribeFastSnapshotRestoresMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4552,7 +4552,7 @@ internal fun registerDescribeFleetHistoryMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4575,7 +4575,7 @@ internal fun registerDescribeFleetInstancesMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4598,7 +4598,7 @@ internal fun registerDescribeFleetsMiddleware(config: Ec2Client.Config, op: SdkH
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4621,7 +4621,7 @@ internal fun registerDescribeFlowLogsMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4644,7 +4644,7 @@ internal fun registerDescribeFpgaImageAttributeMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4667,7 +4667,7 @@ internal fun registerDescribeFpgaImagesMiddleware(config: Ec2Client.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4690,7 +4690,7 @@ internal fun registerDescribeHostReservationOfferingsMiddleware(config: Ec2Clien
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4713,7 +4713,7 @@ internal fun registerDescribeHostReservationsMiddleware(config: Ec2Client.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4736,7 +4736,7 @@ internal fun registerDescribeHostsMiddleware(config: Ec2Client.Config, op: SdkHt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4759,7 +4759,7 @@ internal fun registerDescribeIamInstanceProfileAssociationsMiddleware(config: Ec
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4782,7 +4782,7 @@ internal fun registerDescribeIdFormatMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4805,7 +4805,7 @@ internal fun registerDescribeIdentityIdFormatMiddleware(config: Ec2Client.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4828,7 +4828,7 @@ internal fun registerDescribeImageAttributeMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4851,7 +4851,7 @@ internal fun registerDescribeImagesMiddleware(config: Ec2Client.Config, op: SdkH
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4874,7 +4874,7 @@ internal fun registerDescribeImportImageTasksMiddleware(config: Ec2Client.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4897,7 +4897,7 @@ internal fun registerDescribeImportSnapshotTasksMiddleware(config: Ec2Client.Con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4920,7 +4920,7 @@ internal fun registerDescribeInstanceAttributeMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4943,7 +4943,7 @@ internal fun registerDescribeInstanceCreditSpecificationsMiddleware(config: Ec2C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4966,7 +4966,7 @@ internal fun registerDescribeInstanceEventNotificationAttributesMiddleware(confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -4989,7 +4989,7 @@ internal fun registerDescribeInstanceEventWindowsMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5012,7 +5012,7 @@ internal fun registerDescribeInstanceStatusMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5035,7 +5035,7 @@ internal fun registerDescribeInstanceTypeOfferingsMiddleware(config: Ec2Client.C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5058,7 +5058,7 @@ internal fun registerDescribeInstanceTypesMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5081,7 +5081,7 @@ internal fun registerDescribeInstancesMiddleware(config: Ec2Client.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5104,7 +5104,7 @@ internal fun registerDescribeInternetGatewaysMiddleware(config: Ec2Client.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5127,7 +5127,7 @@ internal fun registerDescribeIpv6PoolsMiddleware(config: Ec2Client.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5150,7 +5150,7 @@ internal fun registerDescribeKeyPairsMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5173,7 +5173,7 @@ internal fun registerDescribeLaunchTemplateVersionsMiddleware(config: Ec2Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5196,7 +5196,7 @@ internal fun registerDescribeLaunchTemplatesMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5219,7 +5219,7 @@ internal fun registerDescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociat
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5242,7 +5242,7 @@ internal fun registerDescribeLocalGatewayRouteTableVpcAssociationsMiddleware(con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5265,7 +5265,7 @@ internal fun registerDescribeLocalGatewayRouteTablesMiddleware(config: Ec2Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5288,7 +5288,7 @@ internal fun registerDescribeLocalGatewayVirtualInterfaceGroupsMiddleware(config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5311,7 +5311,7 @@ internal fun registerDescribeLocalGatewayVirtualInterfacesMiddleware(config: Ec2
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5334,7 +5334,7 @@ internal fun registerDescribeLocalGatewaysMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5357,7 +5357,7 @@ internal fun registerDescribeManagedPrefixListsMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5380,7 +5380,7 @@ internal fun registerDescribeMovingAddressesMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5403,7 +5403,7 @@ internal fun registerDescribeNatGatewaysMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5426,7 +5426,7 @@ internal fun registerDescribeNetworkAclsMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5449,7 +5449,7 @@ internal fun registerDescribeNetworkInsightsAnalysesMiddleware(config: Ec2Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5472,7 +5472,7 @@ internal fun registerDescribeNetworkInsightsPathsMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5495,7 +5495,7 @@ internal fun registerDescribeNetworkInterfaceAttributeMiddleware(config: Ec2Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5518,7 +5518,7 @@ internal fun registerDescribeNetworkInterfacePermissionsMiddleware(config: Ec2Cl
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5541,7 +5541,7 @@ internal fun registerDescribeNetworkInterfacesMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5564,7 +5564,7 @@ internal fun registerDescribePlacementGroupsMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5587,7 +5587,7 @@ internal fun registerDescribePrefixListsMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5610,7 +5610,7 @@ internal fun registerDescribePrincipalIdFormatMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5633,7 +5633,7 @@ internal fun registerDescribePublicIpv4PoolsMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5656,7 +5656,7 @@ internal fun registerDescribeRegionsMiddleware(config: Ec2Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5679,7 +5679,7 @@ internal fun registerDescribeReplaceRootVolumeTasksMiddleware(config: Ec2Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5702,7 +5702,7 @@ internal fun registerDescribeReservedInstancesMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5725,7 +5725,7 @@ internal fun registerDescribeReservedInstancesListingsMiddleware(config: Ec2Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5748,7 +5748,7 @@ internal fun registerDescribeReservedInstancesModificationsMiddleware(config: Ec
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5771,7 +5771,7 @@ internal fun registerDescribeReservedInstancesOfferingsMiddleware(config: Ec2Cli
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5794,7 +5794,7 @@ internal fun registerDescribeRouteTablesMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5817,7 +5817,7 @@ internal fun registerDescribeScheduledInstanceAvailabilityMiddleware(config: Ec2
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5840,7 +5840,7 @@ internal fun registerDescribeScheduledInstancesMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5863,7 +5863,7 @@ internal fun registerDescribeSecurityGroupReferencesMiddleware(config: Ec2Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5886,7 +5886,7 @@ internal fun registerDescribeSecurityGroupRulesMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5909,7 +5909,7 @@ internal fun registerDescribeSecurityGroupsMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5932,7 +5932,7 @@ internal fun registerDescribeSnapshotAttributeMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5955,7 +5955,7 @@ internal fun registerDescribeSnapshotsMiddleware(config: Ec2Client.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -5978,7 +5978,7 @@ internal fun registerDescribeSpotDatafeedSubscriptionMiddleware(config: Ec2Clien
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6001,7 +6001,7 @@ internal fun registerDescribeSpotFleetInstancesMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6024,7 +6024,7 @@ internal fun registerDescribeSpotFleetRequestHistoryMiddleware(config: Ec2Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6047,7 +6047,7 @@ internal fun registerDescribeSpotFleetRequestsMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6070,7 +6070,7 @@ internal fun registerDescribeSpotInstanceRequestsMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6093,7 +6093,7 @@ internal fun registerDescribeSpotPriceHistoryMiddleware(config: Ec2Client.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6116,7 +6116,7 @@ internal fun registerDescribeStaleSecurityGroupsMiddleware(config: Ec2Client.Con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6139,7 +6139,7 @@ internal fun registerDescribeStoreImageTasksMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6162,7 +6162,7 @@ internal fun registerDescribeSubnetsMiddleware(config: Ec2Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6185,7 +6185,7 @@ internal fun registerDescribeTagsMiddleware(config: Ec2Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6208,7 +6208,7 @@ internal fun registerDescribeTrafficMirrorFiltersMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6231,7 +6231,7 @@ internal fun registerDescribeTrafficMirrorSessionsMiddleware(config: Ec2Client.C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6254,7 +6254,7 @@ internal fun registerDescribeTrafficMirrorTargetsMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6277,7 +6277,7 @@ internal fun registerDescribeTransitGatewayAttachmentsMiddleware(config: Ec2Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6300,7 +6300,7 @@ internal fun registerDescribeTransitGatewayConnectPeersMiddleware(config: Ec2Cli
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6323,7 +6323,7 @@ internal fun registerDescribeTransitGatewayConnectsMiddleware(config: Ec2Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6346,7 +6346,7 @@ internal fun registerDescribeTransitGatewayMulticastDomainsMiddleware(config: Ec
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6369,7 +6369,7 @@ internal fun registerDescribeTransitGatewayPeeringAttachmentsMiddleware(config: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6392,7 +6392,7 @@ internal fun registerDescribeTransitGatewayRouteTablesMiddleware(config: Ec2Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6415,7 +6415,7 @@ internal fun registerDescribeTransitGatewayVpcAttachmentsMiddleware(config: Ec2C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6438,7 +6438,7 @@ internal fun registerDescribeTransitGatewaysMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6461,7 +6461,7 @@ internal fun registerDescribeTrunkInterfaceAssociationsMiddleware(config: Ec2Cli
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6484,7 +6484,7 @@ internal fun registerDescribeVolumeAttributeMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6507,7 +6507,7 @@ internal fun registerDescribeVolumeStatusMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6530,7 +6530,7 @@ internal fun registerDescribeVolumesMiddleware(config: Ec2Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6553,7 +6553,7 @@ internal fun registerDescribeVolumesModificationsMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6576,7 +6576,7 @@ internal fun registerDescribeVpcAttributeMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6599,7 +6599,7 @@ internal fun registerDescribeVpcClassicLinkMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6622,7 +6622,7 @@ internal fun registerDescribeVpcClassicLinkDnsSupportMiddleware(config: Ec2Clien
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6645,7 +6645,7 @@ internal fun registerDescribeVpcEndpointConnectionNotificationsMiddleware(config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6668,7 +6668,7 @@ internal fun registerDescribeVpcEndpointConnectionsMiddleware(config: Ec2Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6691,7 +6691,7 @@ internal fun registerDescribeVpcEndpointServiceConfigurationsMiddleware(config: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6714,7 +6714,7 @@ internal fun registerDescribeVpcEndpointServicePermissionsMiddleware(config: Ec2
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6737,7 +6737,7 @@ internal fun registerDescribeVpcEndpointServicesMiddleware(config: Ec2Client.Con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6760,7 +6760,7 @@ internal fun registerDescribeVpcEndpointsMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6783,7 +6783,7 @@ internal fun registerDescribeVpcPeeringConnectionsMiddleware(config: Ec2Client.C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6806,7 +6806,7 @@ internal fun registerDescribeVpcsMiddleware(config: Ec2Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6829,7 +6829,7 @@ internal fun registerDescribeVpnConnectionsMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6852,7 +6852,7 @@ internal fun registerDescribeVpnGatewaysMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6875,7 +6875,7 @@ internal fun registerDetachClassicLinkVpcMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6898,7 +6898,7 @@ internal fun registerDetachInternetGatewayMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6921,7 +6921,7 @@ internal fun registerDetachNetworkInterfaceMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6944,7 +6944,7 @@ internal fun registerDetachVolumeMiddleware(config: Ec2Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6967,7 +6967,7 @@ internal fun registerDetachVpnGatewayMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -6990,7 +6990,7 @@ internal fun registerDisableEbsEncryptionByDefaultMiddleware(config: Ec2Client.C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7013,7 +7013,7 @@ internal fun registerDisableFastSnapshotRestoresMiddleware(config: Ec2Client.Con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7036,7 +7036,7 @@ internal fun registerDisableImageDeprecationMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7059,7 +7059,7 @@ internal fun registerDisableSerialConsoleAccessMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7082,7 +7082,7 @@ internal fun registerDisableTransitGatewayRouteTablePropagationMiddleware(config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7105,7 +7105,7 @@ internal fun registerDisableVgwRoutePropagationMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7128,7 +7128,7 @@ internal fun registerDisableVpcClassicLinkMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7151,7 +7151,7 @@ internal fun registerDisableVpcClassicLinkDnsSupportMiddleware(config: Ec2Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7174,7 +7174,7 @@ internal fun registerDisassociateAddressMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7197,7 +7197,7 @@ internal fun registerDisassociateClientVpnTargetNetworkMiddleware(config: Ec2Cli
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7220,7 +7220,7 @@ internal fun registerDisassociateEnclaveCertificateIamRoleMiddleware(config: Ec2
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7243,7 +7243,7 @@ internal fun registerDisassociateIamInstanceProfileMiddleware(config: Ec2Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7266,7 +7266,7 @@ internal fun registerDisassociateInstanceEventWindowMiddleware(config: Ec2Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7289,7 +7289,7 @@ internal fun registerDisassociateRouteTableMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7312,7 +7312,7 @@ internal fun registerDisassociateSubnetCidrBlockMiddleware(config: Ec2Client.Con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7335,7 +7335,7 @@ internal fun registerDisassociateTransitGatewayMulticastDomainMiddleware(config:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7358,7 +7358,7 @@ internal fun registerDisassociateTransitGatewayRouteTableMiddleware(config: Ec2C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7381,7 +7381,7 @@ internal fun registerDisassociateTrunkInterfaceMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7404,7 +7404,7 @@ internal fun registerDisassociateVpcCidrBlockMiddleware(config: Ec2Client.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7427,7 +7427,7 @@ internal fun registerEnableEbsEncryptionByDefaultMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7450,7 +7450,7 @@ internal fun registerEnableFastSnapshotRestoresMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7473,7 +7473,7 @@ internal fun registerEnableImageDeprecationMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7496,7 +7496,7 @@ internal fun registerEnableSerialConsoleAccessMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7519,7 +7519,7 @@ internal fun registerEnableTransitGatewayRouteTablePropagationMiddleware(config:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7542,7 +7542,7 @@ internal fun registerEnableVgwRoutePropagationMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7565,7 +7565,7 @@ internal fun registerEnableVolumeIoMiddleware(config: Ec2Client.Config, op: SdkH
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7588,7 +7588,7 @@ internal fun registerEnableVpcClassicLinkMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7611,7 +7611,7 @@ internal fun registerEnableVpcClassicLinkDnsSupportMiddleware(config: Ec2Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7634,7 +7634,7 @@ internal fun registerExportClientVpnClientCertificateRevocationListMiddleware(co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7657,7 +7657,7 @@ internal fun registerExportClientVpnClientConfigurationMiddleware(config: Ec2Cli
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7680,7 +7680,7 @@ internal fun registerExportImageMiddleware(config: Ec2Client.Config, op: SdkHttp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7703,7 +7703,7 @@ internal fun registerExportTransitGatewayRoutesMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7726,7 +7726,7 @@ internal fun registerGetAssociatedEnclaveCertificateIamRolesMiddleware(config: E
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7749,7 +7749,7 @@ internal fun registerGetAssociatedIpv6PoolCidrsMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7772,7 +7772,7 @@ internal fun registerGetCapacityReservationUsageMiddleware(config: Ec2Client.Con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7795,7 +7795,7 @@ internal fun registerGetCoipPoolUsageMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7818,7 +7818,7 @@ internal fun registerGetConsoleOutputMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7841,7 +7841,7 @@ internal fun registerGetConsoleScreenshotMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7864,7 +7864,7 @@ internal fun registerGetDefaultCreditSpecificationMiddleware(config: Ec2Client.C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7887,7 +7887,7 @@ internal fun registerGetEbsDefaultKmsKeyIdMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7910,7 +7910,7 @@ internal fun registerGetEbsEncryptionByDefaultMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7933,7 +7933,7 @@ internal fun registerGetFlowLogsIntegrationTemplateMiddleware(config: Ec2Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7956,7 +7956,7 @@ internal fun registerGetGroupsForCapacityReservationMiddleware(config: Ec2Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -7979,7 +7979,7 @@ internal fun registerGetHostReservationPurchasePreviewMiddleware(config: Ec2Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8002,7 +8002,7 @@ internal fun registerGetLaunchTemplateDataMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8025,7 +8025,7 @@ internal fun registerGetManagedPrefixListAssociationsMiddleware(config: Ec2Clien
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8048,7 +8048,7 @@ internal fun registerGetManagedPrefixListEntriesMiddleware(config: Ec2Client.Con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8071,7 +8071,7 @@ internal fun registerGetPasswordDataMiddleware(config: Ec2Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8094,7 +8094,7 @@ internal fun registerGetReservedInstancesExchangeQuoteMiddleware(config: Ec2Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8117,7 +8117,7 @@ internal fun registerGetSerialConsoleAccessStatusMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8140,7 +8140,7 @@ internal fun registerGetSubnetCidrReservationsMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8163,7 +8163,7 @@ internal fun registerGetTransitGatewayAttachmentPropagationsMiddleware(config: E
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8186,7 +8186,7 @@ internal fun registerGetTransitGatewayMulticastDomainAssociationsMiddleware(conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8209,7 +8209,7 @@ internal fun registerGetTransitGatewayPrefixListReferencesMiddleware(config: Ec2
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8232,7 +8232,7 @@ internal fun registerGetTransitGatewayRouteTableAssociationsMiddleware(config: E
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8255,7 +8255,7 @@ internal fun registerGetTransitGatewayRouteTablePropagationsMiddleware(config: E
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8278,7 +8278,7 @@ internal fun registerGetVpnConnectionDeviceSampleConfigurationMiddleware(config:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8301,7 +8301,7 @@ internal fun registerGetVpnConnectionDeviceTypesMiddleware(config: Ec2Client.Con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8324,7 +8324,7 @@ internal fun registerImportClientVpnClientCertificateRevocationListMiddleware(co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8347,7 +8347,7 @@ internal fun registerImportImageMiddleware(config: Ec2Client.Config, op: SdkHttp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8370,7 +8370,7 @@ internal fun registerImportInstanceMiddleware(config: Ec2Client.Config, op: SdkH
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8393,7 +8393,7 @@ internal fun registerImportKeyPairMiddleware(config: Ec2Client.Config, op: SdkHt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8416,7 +8416,7 @@ internal fun registerImportSnapshotMiddleware(config: Ec2Client.Config, op: SdkH
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8439,7 +8439,7 @@ internal fun registerImportVolumeMiddleware(config: Ec2Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8462,7 +8462,7 @@ internal fun registerModifyAddressAttributeMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8485,7 +8485,7 @@ internal fun registerModifyAvailabilityZoneGroupMiddleware(config: Ec2Client.Con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8508,7 +8508,7 @@ internal fun registerModifyCapacityReservationMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8531,7 +8531,7 @@ internal fun registerModifyCapacityReservationFleetMiddleware(config: Ec2Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8554,7 +8554,7 @@ internal fun registerModifyClientVpnEndpointMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8577,7 +8577,7 @@ internal fun registerModifyDefaultCreditSpecificationMiddleware(config: Ec2Clien
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8600,7 +8600,7 @@ internal fun registerModifyEbsDefaultKmsKeyIdMiddleware(config: Ec2Client.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8623,7 +8623,7 @@ internal fun registerModifyFleetMiddleware(config: Ec2Client.Config, op: SdkHttp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8646,7 +8646,7 @@ internal fun registerModifyFpgaImageAttributeMiddleware(config: Ec2Client.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8669,7 +8669,7 @@ internal fun registerModifyHostsMiddleware(config: Ec2Client.Config, op: SdkHttp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8692,7 +8692,7 @@ internal fun registerModifyIdFormatMiddleware(config: Ec2Client.Config, op: SdkH
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8715,7 +8715,7 @@ internal fun registerModifyIdentityIdFormatMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8738,7 +8738,7 @@ internal fun registerModifyImageAttributeMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8761,7 +8761,7 @@ internal fun registerModifyInstanceAttributeMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8784,7 +8784,7 @@ internal fun registerModifyInstanceCapacityReservationAttributesMiddleware(confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8807,7 +8807,7 @@ internal fun registerModifyInstanceCreditSpecificationMiddleware(config: Ec2Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8830,7 +8830,7 @@ internal fun registerModifyInstanceEventStartTimeMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8853,7 +8853,7 @@ internal fun registerModifyInstanceEventWindowMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8876,7 +8876,7 @@ internal fun registerModifyInstanceMetadataOptionsMiddleware(config: Ec2Client.C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8899,7 +8899,7 @@ internal fun registerModifyInstancePlacementMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8922,7 +8922,7 @@ internal fun registerModifyLaunchTemplateMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8945,7 +8945,7 @@ internal fun registerModifyManagedPrefixListMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8968,7 +8968,7 @@ internal fun registerModifyNetworkInterfaceAttributeMiddleware(config: Ec2Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -8991,7 +8991,7 @@ internal fun registerModifyReservedInstancesMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9014,7 +9014,7 @@ internal fun registerModifySecurityGroupRulesMiddleware(config: Ec2Client.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9037,7 +9037,7 @@ internal fun registerModifySnapshotAttributeMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9060,7 +9060,7 @@ internal fun registerModifySpotFleetRequestMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9083,7 +9083,7 @@ internal fun registerModifySubnetAttributeMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9106,7 +9106,7 @@ internal fun registerModifyTrafficMirrorFilterNetworkServicesMiddleware(config: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9129,7 +9129,7 @@ internal fun registerModifyTrafficMirrorFilterRuleMiddleware(config: Ec2Client.C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9152,7 +9152,7 @@ internal fun registerModifyTrafficMirrorSessionMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9175,7 +9175,7 @@ internal fun registerModifyTransitGatewayMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9198,7 +9198,7 @@ internal fun registerModifyTransitGatewayPrefixListReferenceMiddleware(config: E
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9221,7 +9221,7 @@ internal fun registerModifyTransitGatewayVpcAttachmentMiddleware(config: Ec2Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9244,7 +9244,7 @@ internal fun registerModifyVolumeMiddleware(config: Ec2Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9267,7 +9267,7 @@ internal fun registerModifyVolumeAttributeMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9290,7 +9290,7 @@ internal fun registerModifyVpcAttributeMiddleware(config: Ec2Client.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9313,7 +9313,7 @@ internal fun registerModifyVpcEndpointMiddleware(config: Ec2Client.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9336,7 +9336,7 @@ internal fun registerModifyVpcEndpointConnectionNotificationMiddleware(config: E
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9359,7 +9359,7 @@ internal fun registerModifyVpcEndpointServiceConfigurationMiddleware(config: Ec2
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9382,7 +9382,7 @@ internal fun registerModifyVpcEndpointServicePermissionsMiddleware(config: Ec2Cl
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9405,7 +9405,7 @@ internal fun registerModifyVpcPeeringConnectionOptionsMiddleware(config: Ec2Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9428,7 +9428,7 @@ internal fun registerModifyVpcTenancyMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9451,7 +9451,7 @@ internal fun registerModifyVpnConnectionMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9474,7 +9474,7 @@ internal fun registerModifyVpnConnectionOptionsMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9497,7 +9497,7 @@ internal fun registerModifyVpnTunnelCertificateMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9520,7 +9520,7 @@ internal fun registerModifyVpnTunnelOptionsMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9543,7 +9543,7 @@ internal fun registerMonitorInstancesMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9566,7 +9566,7 @@ internal fun registerMoveAddressToVpcMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9589,7 +9589,7 @@ internal fun registerProvisionByoipCidrMiddleware(config: Ec2Client.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9612,7 +9612,7 @@ internal fun registerPurchaseHostReservationMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9635,7 +9635,7 @@ internal fun registerPurchaseReservedInstancesOfferingMiddleware(config: Ec2Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9658,7 +9658,7 @@ internal fun registerPurchaseScheduledInstancesMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9681,7 +9681,7 @@ internal fun registerRebootInstancesMiddleware(config: Ec2Client.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9704,7 +9704,7 @@ internal fun registerRegisterImageMiddleware(config: Ec2Client.Config, op: SdkHt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9727,7 +9727,7 @@ internal fun registerRegisterInstanceEventNotificationAttributesMiddleware(confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9750,7 +9750,7 @@ internal fun registerRegisterTransitGatewayMulticastGroupMembersMiddleware(confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9773,7 +9773,7 @@ internal fun registerRegisterTransitGatewayMulticastGroupSourcesMiddleware(confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9796,7 +9796,7 @@ internal fun registerRejectTransitGatewayMulticastDomainAssociationsMiddleware(c
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9819,7 +9819,7 @@ internal fun registerRejectTransitGatewayPeeringAttachmentMiddleware(config: Ec2
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9842,7 +9842,7 @@ internal fun registerRejectTransitGatewayVpcAttachmentMiddleware(config: Ec2Clie
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9865,7 +9865,7 @@ internal fun registerRejectVpcEndpointConnectionsMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9888,7 +9888,7 @@ internal fun registerRejectVpcPeeringConnectionMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9911,7 +9911,7 @@ internal fun registerReleaseAddressMiddleware(config: Ec2Client.Config, op: SdkH
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9934,7 +9934,7 @@ internal fun registerReleaseHostsMiddleware(config: Ec2Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9957,7 +9957,7 @@ internal fun registerReplaceIamInstanceProfileAssociationMiddleware(config: Ec2C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -9980,7 +9980,7 @@ internal fun registerReplaceNetworkAclAssociationMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10003,7 +10003,7 @@ internal fun registerReplaceNetworkAclEntryMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10026,7 +10026,7 @@ internal fun registerReplaceRouteMiddleware(config: Ec2Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10049,7 +10049,7 @@ internal fun registerReplaceRouteTableAssociationMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10072,7 +10072,7 @@ internal fun registerReplaceTransitGatewayRouteMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10095,7 +10095,7 @@ internal fun registerReportInstanceStatusMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10118,7 +10118,7 @@ internal fun registerRequestSpotFleetMiddleware(config: Ec2Client.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10141,7 +10141,7 @@ internal fun registerRequestSpotInstancesMiddleware(config: Ec2Client.Config, op
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10164,7 +10164,7 @@ internal fun registerResetAddressAttributeMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10187,7 +10187,7 @@ internal fun registerResetEbsDefaultKmsKeyIdMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10210,7 +10210,7 @@ internal fun registerResetFpgaImageAttributeMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10233,7 +10233,7 @@ internal fun registerResetImageAttributeMiddleware(config: Ec2Client.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10256,7 +10256,7 @@ internal fun registerResetInstanceAttributeMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10279,7 +10279,7 @@ internal fun registerResetNetworkInterfaceAttributeMiddleware(config: Ec2Client.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10302,7 +10302,7 @@ internal fun registerResetSnapshotAttributeMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10325,7 +10325,7 @@ internal fun registerRestoreAddressToClassicMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10348,7 +10348,7 @@ internal fun registerRestoreManagedPrefixListVersionMiddleware(config: Ec2Client
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10371,7 +10371,7 @@ internal fun registerRevokeClientVpnIngressMiddleware(config: Ec2Client.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10394,7 +10394,7 @@ internal fun registerRevokeSecurityGroupEgressMiddleware(config: Ec2Client.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10417,7 +10417,7 @@ internal fun registerRevokeSecurityGroupIngressMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10440,7 +10440,7 @@ internal fun registerRunInstancesMiddleware(config: Ec2Client.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10463,7 +10463,7 @@ internal fun registerRunScheduledInstancesMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10486,7 +10486,7 @@ internal fun registerSearchLocalGatewayRoutesMiddleware(config: Ec2Client.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10509,7 +10509,7 @@ internal fun registerSearchTransitGatewayMulticastGroupsMiddleware(config: Ec2Cl
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10532,7 +10532,7 @@ internal fun registerSearchTransitGatewayRoutesMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10555,7 +10555,7 @@ internal fun registerSendDiagnosticInterruptMiddleware(config: Ec2Client.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10578,7 +10578,7 @@ internal fun registerStartInstancesMiddleware(config: Ec2Client.Config, op: SdkH
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10601,7 +10601,7 @@ internal fun registerStartNetworkInsightsAnalysisMiddleware(config: Ec2Client.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10624,7 +10624,7 @@ internal fun registerStartVpcEndpointServicePrivateDnsVerificationMiddleware(con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10647,7 +10647,7 @@ internal fun registerStopInstancesMiddleware(config: Ec2Client.Config, op: SdkHt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10670,7 +10670,7 @@ internal fun registerTerminateClientVpnConnectionsMiddleware(config: Ec2Client.C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10693,7 +10693,7 @@ internal fun registerTerminateInstancesMiddleware(config: Ec2Client.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10716,7 +10716,7 @@ internal fun registerUnassignIpv6AddressesMiddleware(config: Ec2Client.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10739,7 +10739,7 @@ internal fun registerUnassignPrivateIpAddressesMiddleware(config: Ec2Client.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10762,7 +10762,7 @@ internal fun registerUnmonitorInstancesMiddleware(config: Ec2Client.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10785,7 +10785,7 @@ internal fun registerUpdateSecurityGroupRuleDescriptionsEgressMiddleware(config:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10808,7 +10808,7 @@ internal fun registerUpdateSecurityGroupRuleDescriptionsIngressMiddleware(config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -10831,7 +10831,7 @@ internal fun registerWithdrawByoipCidrMiddleware(config: Ec2Client.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }

@@ -9,7 +9,7 @@ import aws.sdk.kotlin.runtime.http.middleware.ResolveAwsEndpoint
 import aws.sdk.kotlin.runtime.http.middleware.UserAgent
 import aws.sdk.kotlin.runtime.http.retries.AwsDefaultRetryPolicy
 import aws.sdk.kotlin.services.polly.model.*
-import aws.smithy.kotlin.runtime.http.middleware.RetryFeature
+import aws.smithy.kotlin.runtime.http.middleware.Retry
 import aws.smithy.kotlin.runtime.http.operation.SdkHttpOperation
 
 private val awsUserAgentMetadata = AwsUserAgentMetadata.fromEnvironment(ApiMetadata(ServiceId, SdkVersion))
@@ -20,7 +20,7 @@ internal fun registerDeleteLexiconMiddleware(config: PollyClient.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -40,7 +40,7 @@ internal fun registerDescribeVoicesMiddleware(config: PollyClient.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -60,7 +60,7 @@ internal fun registerGetLexiconMiddleware(config: PollyClient.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -80,7 +80,7 @@ internal fun registerGetSpeechSynthesisTaskMiddleware(config: PollyClient.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -100,7 +100,7 @@ internal fun registerListLexiconsMiddleware(config: PollyClient.Config, op: SdkH
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -120,7 +120,7 @@ internal fun registerListSpeechSynthesisTasksMiddleware(config: PollyClient.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -140,7 +140,7 @@ internal fun registerPutLexiconMiddleware(config: PollyClient.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -160,7 +160,7 @@ internal fun registerStartSpeechSynthesisTaskMiddleware(config: PollyClient.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -180,7 +180,7 @@ internal fun registerSynthesizeSpeechMiddleware(config: PollyClient.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }

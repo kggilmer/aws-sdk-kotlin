@@ -10,7 +10,7 @@ import aws.sdk.kotlin.runtime.http.middleware.UserAgent
 import aws.sdk.kotlin.runtime.http.retries.AwsDefaultRetryPolicy
 import aws.sdk.kotlin.services.sts.model.*
 import aws.smithy.kotlin.runtime.http.middleware.MutateHeaders
-import aws.smithy.kotlin.runtime.http.middleware.RetryFeature
+import aws.smithy.kotlin.runtime.http.middleware.Retry
 import aws.smithy.kotlin.runtime.http.operation.SdkHttpOperation
 
 private val awsUserAgentMetadata = AwsUserAgentMetadata.fromEnvironment(ApiMetadata(ServiceId, SdkVersion))
@@ -21,7 +21,7 @@ internal fun registerAssumeRoleMiddleware(config: StsClient.Config, op: SdkHttpO
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -44,7 +44,7 @@ internal fun registerAssumeRoleWithSamlMiddleware(config: StsClient.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -63,7 +63,7 @@ internal fun registerAssumeRoleWithWebIdentityMiddleware(config: StsClient.Confi
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -82,7 +82,7 @@ internal fun registerDecodeAuthorizationMessageMiddleware(config: StsClient.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -105,7 +105,7 @@ internal fun registerGetAccessKeyInfoMiddleware(config: StsClient.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -128,7 +128,7 @@ internal fun registerGetCallerIdentityMiddleware(config: StsClient.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -151,7 +151,7 @@ internal fun registerGetFederationTokenMiddleware(config: StsClient.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -174,7 +174,7 @@ internal fun registerGetSessionTokenMiddleware(config: StsClient.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }

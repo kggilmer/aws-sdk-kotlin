@@ -10,7 +10,7 @@ import aws.sdk.kotlin.runtime.http.middleware.UserAgent
 import aws.sdk.kotlin.runtime.http.retries.AwsDefaultRetryPolicy
 import aws.sdk.kotlin.runtime.protocol.json.AwsJsonProtocol
 import aws.sdk.kotlin.services.dynamodb.model.*
-import aws.smithy.kotlin.runtime.http.middleware.RetryFeature
+import aws.smithy.kotlin.runtime.http.middleware.Retry
 import aws.smithy.kotlin.runtime.http.operation.SdkHttpOperation
 
 private val awsUserAgentMetadata = AwsUserAgentMetadata.fromEnvironment(ApiMetadata(ServiceId, SdkVersion))
@@ -21,7 +21,7 @@ internal fun registerBatchExecuteStatementMiddleware(config: DynamoDbClient.Conf
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -45,7 +45,7 @@ internal fun registerBatchGetItemMiddleware(config: DynamoDbClient.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -69,7 +69,7 @@ internal fun registerBatchWriteItemMiddleware(config: DynamoDbClient.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -93,7 +93,7 @@ internal fun registerCreateBackupMiddleware(config: DynamoDbClient.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -117,7 +117,7 @@ internal fun registerCreateGlobalTableMiddleware(config: DynamoDbClient.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -141,7 +141,7 @@ internal fun registerCreateTableMiddleware(config: DynamoDbClient.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -165,7 +165,7 @@ internal fun registerDeleteBackupMiddleware(config: DynamoDbClient.Config, op: S
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -189,7 +189,7 @@ internal fun registerDeleteItemMiddleware(config: DynamoDbClient.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -213,7 +213,7 @@ internal fun registerDeleteTableMiddleware(config: DynamoDbClient.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -237,7 +237,7 @@ internal fun registerDescribeBackupMiddleware(config: DynamoDbClient.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -261,7 +261,7 @@ internal fun registerDescribeContinuousBackupsMiddleware(config: DynamoDbClient.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -285,7 +285,7 @@ internal fun registerDescribeContributorInsightsMiddleware(config: DynamoDbClien
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -309,7 +309,7 @@ internal fun registerDescribeEndpointsMiddleware(config: DynamoDbClient.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -333,7 +333,7 @@ internal fun registerDescribeExportMiddleware(config: DynamoDbClient.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -357,7 +357,7 @@ internal fun registerDescribeGlobalTableMiddleware(config: DynamoDbClient.Config
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -381,7 +381,7 @@ internal fun registerDescribeGlobalTableSettingsMiddleware(config: DynamoDbClien
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -405,7 +405,7 @@ internal fun registerDescribeKinesisStreamingDestinationMiddleware(config: Dynam
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -429,7 +429,7 @@ internal fun registerDescribeLimitsMiddleware(config: DynamoDbClient.Config, op:
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -453,7 +453,7 @@ internal fun registerDescribeTableMiddleware(config: DynamoDbClient.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -477,7 +477,7 @@ internal fun registerDescribeTableReplicaAutoScalingMiddleware(config: DynamoDbC
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -501,7 +501,7 @@ internal fun registerDescribeTimeToLiveMiddleware(config: DynamoDbClient.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -525,7 +525,7 @@ internal fun registerDisableKinesisStreamingDestinationMiddleware(config: Dynamo
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -549,7 +549,7 @@ internal fun registerEnableKinesisStreamingDestinationMiddleware(config: DynamoD
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -573,7 +573,7 @@ internal fun registerExecuteStatementMiddleware(config: DynamoDbClient.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -597,7 +597,7 @@ internal fun registerExecuteTransactionMiddleware(config: DynamoDbClient.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -621,7 +621,7 @@ internal fun registerExportTableToPointInTimeMiddleware(config: DynamoDbClient.C
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -645,7 +645,7 @@ internal fun registerGetItemMiddleware(config: DynamoDbClient.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -669,7 +669,7 @@ internal fun registerListBackupsMiddleware(config: DynamoDbClient.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -693,7 +693,7 @@ internal fun registerListContributorInsightsMiddleware(config: DynamoDbClient.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -717,7 +717,7 @@ internal fun registerListExportsMiddleware(config: DynamoDbClient.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -741,7 +741,7 @@ internal fun registerListGlobalTablesMiddleware(config: DynamoDbClient.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -765,7 +765,7 @@ internal fun registerListTablesMiddleware(config: DynamoDbClient.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -789,7 +789,7 @@ internal fun registerListTagsOfResourceMiddleware(config: DynamoDbClient.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -813,7 +813,7 @@ internal fun registerPutItemMiddleware(config: DynamoDbClient.Config, op: SdkHtt
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -837,7 +837,7 @@ internal fun registerQueryMiddleware(config: DynamoDbClient.Config, op: SdkHttpO
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -861,7 +861,7 @@ internal fun registerRestoreTableFromBackupMiddleware(config: DynamoDbClient.Con
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -885,7 +885,7 @@ internal fun registerRestoreTableToPointInTimeMiddleware(config: DynamoDbClient.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -909,7 +909,7 @@ internal fun registerScanMiddleware(config: DynamoDbClient.Config, op: SdkHttpOp
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -933,7 +933,7 @@ internal fun registerTagResourceMiddleware(config: DynamoDbClient.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -957,7 +957,7 @@ internal fun registerTransactGetItemsMiddleware(config: DynamoDbClient.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -981,7 +981,7 @@ internal fun registerTransactWriteItemsMiddleware(config: DynamoDbClient.Config,
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1005,7 +1005,7 @@ internal fun registerUntagResourceMiddleware(config: DynamoDbClient.Config, op: 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1029,7 +1029,7 @@ internal fun registerUpdateContinuousBackupsMiddleware(config: DynamoDbClient.Co
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1053,7 +1053,7 @@ internal fun registerUpdateContributorInsightsMiddleware(config: DynamoDbClient.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1077,7 +1077,7 @@ internal fun registerUpdateGlobalTableMiddleware(config: DynamoDbClient.Config, 
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1101,7 +1101,7 @@ internal fun registerUpdateGlobalTableSettingsMiddleware(config: DynamoDbClient.
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1125,7 +1125,7 @@ internal fun registerUpdateItemMiddleware(config: DynamoDbClient.Config, op: Sdk
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1149,7 +1149,7 @@ internal fun registerUpdateTableMiddleware(config: DynamoDbClient.Config, op: Sd
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1173,7 +1173,7 @@ internal fun registerUpdateTableReplicaAutoScalingMiddleware(config: DynamoDbCli
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
@@ -1197,7 +1197,7 @@ internal fun registerUpdateTimeToLiveMiddleware(config: DynamoDbClient.Config, o
             serviceId = ServiceId
             resolver = config.endpointResolver
         }
-        install(RetryFeature) {
+        install(Retry) {
             strategy = config.retryStrategy
             policy = AwsDefaultRetryPolicy
         }
