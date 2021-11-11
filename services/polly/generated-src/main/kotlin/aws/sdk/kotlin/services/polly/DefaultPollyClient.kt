@@ -20,7 +20,7 @@ import aws.smithy.kotlin.runtime.util.putIfAbsent
 
 const val ServiceId: String = "Polly"
 const val ServiceApiVersion: String = "2016-06-10"
-const val SdkVersion: String = "0.9.2-alpha"
+const val SdkVersion: String = "0.9.3-SNAPSHOT"
 
 internal class DefaultPollyClient(override val config: PollyClient.Config) : PollyClient {
     private val client: SdkHttpClient

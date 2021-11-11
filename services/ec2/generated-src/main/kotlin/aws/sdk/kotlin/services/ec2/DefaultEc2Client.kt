@@ -20,7 +20,7 @@ import aws.smithy.kotlin.runtime.util.putIfAbsent
 
 const val ServiceId: String = "EC2"
 const val ServiceApiVersion: String = "2016-11-15"
-const val SdkVersion: String = "0.9.2-alpha"
+const val SdkVersion: String = "0.9.3-SNAPSHOT"
 
 internal class DefaultEc2Client(override val config: Ec2Client.Config) : Ec2Client {
     private val client: SdkHttpClient

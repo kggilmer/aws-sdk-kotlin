@@ -20,7 +20,7 @@ import aws.smithy.kotlin.runtime.util.putIfAbsent
 
 const val ServiceId: String = "DynamoDB"
 const val ServiceApiVersion: String = "2012-08-10"
-const val SdkVersion: String = "0.9.2-alpha"
+const val SdkVersion: String = "0.9.3-SNAPSHOT"
 
 internal class DefaultDynamoDbClient(override val config: DynamoDbClient.Config) : DynamoDbClient {
     private val client: SdkHttpClient
